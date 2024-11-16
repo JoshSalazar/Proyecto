@@ -5,19 +5,19 @@
 
 int i, j;
 int arr[beb][pueb];
-int lit;
+int lit = 0;
 
 int sum[8];
 int mayor = 0;
-int bebida;
+int bebida = 0;
 
 int alc[8];
-int alcohol;
-int litros;
+int alcohol = 0;
+int litros = 0;
 
 int pub[100];
 int alcoholismo = 0;
-int volumen;
+int volumen = 0;
 
 void matriz() //Llenado de las matrices con 0's
 {
@@ -88,7 +88,7 @@ void etanol() //Inciso 3-a
 {
   for(i = 0; i < 8; i++)
     {
-      if(i != 0 || i != 1 || i != 6)
+      if(i != 0 && i != 1 && i != 6)
         {
           if(litros < sum[i])
           {
@@ -106,7 +106,7 @@ void borrachos() //Inciso 3-b
     {
       for(i = 0; i < 8; i++)
         {
-          if(i != 0 || i != 1 || i != 6)
+          if(i != 0 && i != 1 && i != 6)
             {
               pub[j] = pub[j] + arr[i][j];
             }
