@@ -11,7 +11,6 @@ int sum[8];
 int mayor = 0;
 int bebida = 0;
 
-int alc[8];
 int alcohol = 0;
 int litros = 0;
 
