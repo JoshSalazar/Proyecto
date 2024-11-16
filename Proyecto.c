@@ -3,6 +3,7 @@
 #define beb 8
 #define pueb 100
 
+int i, j;
 int arr[beb][pueb];
 int lit;
 
@@ -12,10 +13,14 @@ int bebida;
 
 int alc[8];
 int alcohol;
+int litros;
+
+int pub[100];
+int alcoholismo = 0;
+int volumen;
 
 void matriz() //Llenado de las matrices con 0's
 {
-  int i, j;
 
   for(i = 0; i < 8; i++)
     {
@@ -24,6 +29,10 @@ void matriz() //Llenado de las matrices con 0's
           arr[i][j] = 0;
         }
     }
+  for(i = 0; i < 8; i++)
+    {
+      sum[i] = 0;
+    }  
 }
 
 void llenado() //Inciso 1
@@ -50,11 +59,6 @@ void mayor() //Inciso 2
 {
   for(i = 0; i < 8; i++)
     {
-      sum[i] = 0;
-    }
-  
-  for(i = 0; i < 8; i++)
-    {
       for(j = 0; j < 100; j++)
         {
           sum[i] = sum[i] + arr[i][j];
@@ -76,10 +80,51 @@ void alcohol() //Inciso 3-a
 {
   for(i = 0; i < 8; i++)
     {
-      
+      if(i != 0 || i != 1 || i != 6)
+        {
+          if(litros < sum[i])
+          {
+            litros = sum[i];
+            alcohol = i;
+          }
+        }
     }
+  printf("La bebida alcohólica más consumida es %d, con %d litros consumidos al año.", alcohol, litros);
 }
 
-void borrachos() //Inciso 3-b
+void alcoholismo() //Inciso 3-b
 {
+  for(j = 0; j < 100; j++)
+    {
+      for(i = 0; i < 8; i++)
+        {
+          if(i != 0 || i != 1 || i != 6)
+            {
+              pub[j] = pub[j] + arr[i][j];
+            }
+        }
+    }
+  
+  for(j = 0; j < 100; j++)
+    {
+      if(volumen < pub[i])
+        {
+          volumen = pub[i];
+          alcoholismo = i;
+        }
+    }
+  printf("El pueblo %d es el pueblo que consume más alcohol al año, con %d litros consumidos anualmente", alcoholismo, volumen);
+}
+
+int main()
+{
+  matriz();
+  llenado();
+  printf("\n\n");
+  mayor();
+  printf("\n\n");
+  alcohol();
+  printf("\n\n");
+  alcoholismo();
+  return 0;
 }
