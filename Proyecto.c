@@ -41,21 +41,29 @@ void llenado() //Inciso 1
     {
       do
         {
-          printf("ingrese el número de bebida del pueblo %d. \nSi ya no va a registrar más datos de bebidas, ingrese "-1".", j + 1);
+          printf("ingrese el número de bebida del pueblo %d. \nSi ya no va a registrar más datos de bebidas, ingrese -1.\n", j + 1);
           scanf("%d", &i);
           
           if(i != -1)
             {
-              printf("Ingrese la cantidad de litros consumidos de la bebida %d.", i);
+              printf("Ingrese la cantidad de litros consumidos de la bebida %d.\n", i);
               scanf("%d", &lit);
-              arr[i][j] = lit;
-            }
+
+              if(lit < 0)
+                {
+                printf("No existen volúmenes negativos xd, intente otra vez.\n");
+                }
+              else if(lit >= 0)
+                {
+                arr[i][j] = lit;
+                }
+            }  
         }
-      while(i != -1)
+      while(i != -1);
     }
 }
 
-void mayor() //Inciso 2
+void highest() //Inciso 2
 {
   for(i = 0; i < 8; i++)
     {
@@ -76,7 +84,7 @@ void mayor() //Inciso 2
   printf("La bebida más consumida fue la bebida %d, con %d litros consumidos al año.", bebida, mayor); 
 }
 
-void alcohol() //Inciso 3-a
+void etanol() //Inciso 3-a
 {
   for(i = 0; i < 8; i++)
     {
@@ -89,10 +97,10 @@ void alcohol() //Inciso 3-a
           }
         }
     }
-  printf("La bebida alcohólica más consumida es %d, con %d litros consumidos al año.", alcohol, litros);
+  printf("La bebida alcohólica más consumida fue la bebida %d, con %d litros consumidos al año.", alcohol, litros);
 }
 
-void alcoholismo() //Inciso 3-b
+void borrachos() //Inciso 3-b
 {
   for(j = 0; j < 100; j++)
     {
@@ -121,10 +129,10 @@ int main()
   matriz();
   llenado();
   printf("\n\n");
-  mayor();
+  highest();
   printf("\n\n");
-  alcohol();
+  etanol();
   printf("\n\n");
-  alcoholismo();
+  borrachos();
   return 0;
 }
