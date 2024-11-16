@@ -43,21 +43,29 @@ void llenado() //Inciso 1
         {
           printf("Ingrese el número de bebida del pueblo %d. \nSi ya no va a registrar más datos de bebidas, ingrese -1.\n", j + 1);
           scanf("%d", &i);
-          
-          if(i != -1)
-            {
-              printf("Ingrese la cantidad de litros consumidos de la bebida %d.\n", i);
-              scanf("%d", &lit);
 
-              if(lit < 0)
+          if(i != -1)
                 {
-                printf("No existen volúmenes negativos xd, intente otra vez.\n");
+                  if(i >= 0 && i <=7 )
+                    {
+                      printf("Ingrese la cantidad de litros consumidos de la bebida %d.\n", i);
+                      scanf("%d", &lit);
+                      printf("\n");
+  
+                      if(lit < 0)
+                        {
+                          printf("No existen volúmenes negativos xd, intente otra vez.\n\n");
+                        }
+                      else if(lit >= 0)
+                        {
+                          arr[i][j] = lit;
+                        }
+                    }
+                  else if(i > 7 || i < 0)
+                  {
+                    printf("Inválido, el número de bebida debe ser un valor entre 0 y 7.\n\n");
+                  }
                 }
-              else if(lit >= 0)
-                {
-                arr[i][j] = lit;
-                }
-            }  
         }
       while(i != -1);
     }
