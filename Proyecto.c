@@ -41,7 +41,7 @@ void llenado() //Inciso 1
     {
       do
         {
-          printf("ingrese el número de bebida del pueblo %d. \nSi ya no va a registrar más datos de bebidas, ingrese -1.\n", j + 1);
+          printf("Ingrese el número de bebida del pueblo %d. \nSi ya no va a registrar más datos de bebidas, ingrese -1.\n", j + 1);
           scanf("%d", &i);
           
           if(i != -1)
