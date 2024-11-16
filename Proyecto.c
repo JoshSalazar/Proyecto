@@ -115,10 +115,10 @@ void borrachos() //Inciso 3-b
   
   for(j = 0; j < 100; j++)
     {
-      if(volumen < pub[i])
+      if(volumen < pub[j])
         {
-          volumen = pub[i];
-          alcoholismo = i;
+          volumen = pub[j];
+          alcoholismo = j;
         }
     }
   printf("El pueblo %d es el pueblo que consume más alcohol al año, con %d litros consumidos anualmente", alcoholismo, volumen);
