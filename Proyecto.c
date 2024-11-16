@@ -134,6 +134,6 @@ int main()
   etanol();
   printf("\n\n");
   borrachos();
-  printf(":)")
+  printf(":)");
   return 0;
 }
