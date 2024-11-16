@@ -81,7 +81,7 @@ void highest() //Inciso 2
           bebida = i;
         }
     }
-  printf("La bebida más consumida fue la bebida %d, con %d litros consumidos al año.", bebida, mayor); 
+  printf("La bebida más consumida fue la bebida %d, con %d litros consumidos analmente.", bebida, mayor); 
 }
 
 void etanol() //Inciso 3-a
@@ -97,7 +97,7 @@ void etanol() //Inciso 3-a
           }
         }
     }
-  printf("La bebida alcohólica más consumida fue la bebida %d, con %d litros consumidos al año.", alcohol, litros);
+  printf("La bebida alcohólica más consumida fue la bebida %d, con %d litros consumidos analmente.", alcohol, litros);
 }
 
 void borrachos() //Inciso 3-b
@@ -121,7 +121,7 @@ void borrachos() //Inciso 3-b
           alcoholismo = j;
         }
     }
-  printf("El pueblo %d es el pueblo que consume más alcohol al año, con %d litros consumidos anualmente", alcoholismo, volumen);
+  printf("El pueblo %d es el pueblo que consume más bebidas alcohólicas al año, con %d litros consumidos analmente.", alcoholismo + 1, volumen);
 }
 
 int main()
@@ -134,6 +134,6 @@ int main()
   etanol();
   printf("\n\n");
   borrachos();
-  printf(":)");
+  printf("\n:)");
   return 0;
 }
